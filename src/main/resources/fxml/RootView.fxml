@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane fx:id="rootView" prefHeight="400.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+   <center>
+      <TabPane side="BOTTOM" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="locationTab" text="Location" />
+          <Tab fx:id="connectionTab" text="Connection" />
+            <Tab fx:id="securityTab" text="Security" />
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
