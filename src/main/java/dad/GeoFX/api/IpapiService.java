@@ -1,16 +1,8 @@
 package dad.GeoFX.api;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import dad.GeoFX.ipapi.GeoInfo;
-import dad.api.BreedImage;
-import dad.api.BreedsList;
-import dad.api.DogsInterface;
 import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
