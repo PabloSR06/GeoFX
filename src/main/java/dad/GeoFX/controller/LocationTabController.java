@@ -91,7 +91,8 @@ public class LocationTabController implements Initializable {
 			model.longitudProperty().set(info.getLongitude().toString());
 			model.time_zone_codeProperty().set(info.getTimeZone().getCode());
 			model.ip_locationProperty().set(info.getCountryName());
-			model.iconProperty().set(new Image(info.getLocation().getCountryFlag()));
+			model.iconProperty().set(new Image(getClass().getResource("/flag-icons/96x64/" + info.getCountryCode() +  ".png").toExternalForm()));
+			
 			model.zipProperty().set(info.getZip());
 			model.cityProperty().set(info.getCity() + " (" + info.getRegionName() + ")");
 			model.lenguageProperty().set(info.getLocation().getLanguages().get(0).getName() + " ("

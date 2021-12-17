@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:id="connectionView" prefHeight="555.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<BorderPane fx:id="connectionView" prefHeight="555.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -44,7 +43,7 @@
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@flag-icons/Globe-icon.png" />
+                        <Image url="@../flag-icons/Globe-icon.png" />
                      </image>
                   </ImageView>
                   <Label text="REGISTERED ISP:">
