@@ -53,14 +53,14 @@ public class RootController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		rootView.setTop(topController.getView());
-		
-		
 		mainInfo.mainInfoProperty().bind(topController.getInfoModel().mainInfoProperty());
 		mainInfo.mainInfoProperty().addListener((o, ov, nv) -> onIpChanged(o, ov, nv));
 		locationTab.setContent(locationTabController.getView());
 		connectionTab.setContent(connectionTabController.getView());
 		securityTab.setContent(securityTabController.getView());
+		
+		rootView.setTop(topController.getView());
+
 
 	}
 	

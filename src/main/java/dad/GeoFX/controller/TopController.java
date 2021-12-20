@@ -10,6 +10,8 @@ import dad.GeoFX.ipapi.GeoInfo;
 import dad.GeoFX.model.InfoModel;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,22 +22,22 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
 public class TopController implements Initializable {
-	
+
 	@FXML
-    private Button checkButton;
+	private Button checkButton;
 
-    @FXML
-    private TextField ipText;
+	@FXML
+	private TextField ipText;
 
-    @FXML
-    private HBox topView;
-    
-    //Model
-    	
+	@FXML
+	private HBox topView;
+
+	// Model
+
 	private InfoModel mainInfo = new InfoModel();
 
+	private StringProperty ip = new SimpleStringProperty();
 
-	
 	public TopController() throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TopView.fxml"));
 		loader.setController(this);
@@ -44,43 +46,37 @@ public class TopController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		ipText.textProperty().bindBidirectional(ip);
+
+		try {
+			primeraIP();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		checkButton.arm();
 
 	}
-	
-    void primeraIP() throws IOException {
+
+	void primeraIP() throws IOException {
 		IpifyService service = new IpifyService();
-		String salida = service.getIp("json");
-		System.out.println(salida);
 
-		IpapiService ser = new IpapiService();
-
-				
-		mainInfo.setMainInfo(ser.getInfo(salida));
-		
-    }
-	
-		
+		ip.set(service.getIp("json"));
+	}
 
 	@FXML
-    void onCheckAction(ActionEvent event) throws IOException {
-		IpifyService service = new IpifyService();
-		String salida = service.getIp("json");
-		System.out.println(salida);
+	void onCheckAction(ActionEvent event) throws IOException {
 
 		IpapiService ser = new IpapiService();
 
-				
-		mainInfo.setMainInfo(ser.getInfo(salida));
+		mainInfo.setMainInfo(ser.getInfo(ip.get()));
+		System.out.println("ss");
 		
-		System.out.println(ser.getInfo(salida).getSecurity().getThreatLevel());
-//		
-    }
-	
+	}
+
 	public HBox getView() {
 		return topView;
 	}
-	
+
 	public InfoModel getInfoModel() {
 		return mainInfo;
 	}
