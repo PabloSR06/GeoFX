@@ -3,6 +3,7 @@ package dad.GeoFX.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 
 import dad.GeoFX.api.IpapiService;
 import dad.GeoFX.api.IpifyService;
@@ -12,12 +13,15 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
@@ -31,6 +35,8 @@ public class TopController implements Initializable {
 
 	@FXML
 	private HBox topView;
+
+	private Task<GeoInfo> tarea;
 
 	// Model
 
@@ -61,11 +67,42 @@ public class TopController implements Initializable {
 
 		ip.set(service.getIp());
 	}
-	
-	public void cargarDatos() throws IOException {
-		IpapiService ser = new IpapiService();
 
-		mainInfo.setMainInfo(ser.getInfo(ip.get()));
+	public void cargarDatos() throws IOException {
+
+		tarea = new Task<GeoInfo>() {
+
+			@Override
+			protected GeoInfo call() throws Exception {
+				IpapiService ser = new IpapiService();
+
+				return ser.getInfo(ip.get());
+
+			}
+		};
+
+		tarea.setOnSucceeded(e -> {
+			try {
+				System.out.println(tarea.get());
+				mainInfo.setMainInfo(tarea.get());
+
+			} catch (InterruptedException | ExecutionException e1) {
+				// TODO Auto-generated catch block
+				e1.getMessage()	;
+			}
+
+		});
+
+		tarea.setOnFailed(e -> {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Fallo");
+			alert.setHeaderText("Algo no fue bien");
+			alert.setContentText(e.getSource().getException().getMessage());
+			alert.showAndWait();
+		});
+
+		new Thread(tarea).start();
+
 		System.out.println("Pulsado");
 
 	}
@@ -74,7 +111,7 @@ public class TopController implements Initializable {
 	void onCheckAction(ActionEvent event) throws IOException {
 
 		cargarDatos();
-		
+
 	}
 
 	public HBox getView() {
