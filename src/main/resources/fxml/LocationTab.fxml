@@ -27,7 +27,7 @@
             <RowConstraints vgrow="NEVER" />
         </rowConstraints>
          <children>
-            <VBox spacing="5.0">
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
                <children>
                   <Label text="LATITUDE">
                      <font>
@@ -40,7 +40,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnIndex="1">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1">
                <children>
                   <Label text="LONGITUDE">
                      <font>
@@ -53,7 +53,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.rowIndex="3">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="3">
                <children>
                   <Label text="LANGUAGE">
                      <font>
@@ -66,7 +66,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <Label text="TIME ZONE">
                      <font>
@@ -79,7 +79,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.rowIndex="4">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="4">
                <children>
                   <Label text="CALLING CODE">
                      <font>
@@ -92,7 +92,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
                   <Label text="CURRENCY">
                      <font>
@@ -105,7 +105,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.rowIndex="2">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="2">
                <children>
                   <Label text="CITY, STATE">
                      <font>
@@ -118,7 +118,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <Label text="ZIP CODE">
                      <font>
@@ -131,7 +131,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <HBox spacing="5.0" GridPane.rowIndex="1">
+            <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="1">
                <children>
                   <Label text="IP LOCATION:">
                      <font>
@@ -145,6 +145,9 @@
                      </image>
                   </ImageView>
                </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
             </HBox>
          </children>
       </GridPane>

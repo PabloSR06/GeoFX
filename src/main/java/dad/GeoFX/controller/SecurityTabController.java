@@ -62,10 +62,10 @@ public class SecurityTabController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		torCheck.selectedProperty().bindBidirectional(model.security_is_torProperty());
-		proxyCheck.selectedProperty().bindBidirectional(model.proxy_typeProperty());
-		crawlerCheck.selectedProperty().bindBidirectional(model.is_crawlerProperty());
-		threatLabel.textProperty().bindBidirectional(model.security_threat_levelProperty());
+		torCheck.selectedProperty().bind(model.security_is_torProperty());
+		proxyCheck.selectedProperty().bind(model.proxy_typeProperty());
+		crawlerCheck.selectedProperty().bind(model.is_crawlerProperty());
+		threatLabel.textProperty().bind(model.security_threat_levelProperty());
 		
 	
 	}

@@ -71,16 +71,16 @@ public class LocationTabController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		latitudLabel.textProperty().bindBidirectional(model.latitudeProperty());
-		logintudLabel.textProperty().bindBidirectional(model.longitudProperty());
-		callingCodeLabel.textProperty().bindBidirectional(model.location_calling_codeProperty());
-		zipLabel.textProperty().bindBidirectional(model.zipProperty());
-		paisLabel.textProperty().bindBidirectional(model.ip_locationProperty());
-		paisView.imageProperty().bindBidirectional(model.iconProperty());
-		cityLabel.textProperty().bindBidirectional(model.cityProperty());
-		languageLabel.textProperty().bindBidirectional(model.lenguageProperty());
-		timeZoneLabel.textProperty().bindBidirectional(model.time_zone_codeProperty());
-		currencyLabel.textProperty().bindBidirectional(model.monedaProperty());
+		latitudLabel.textProperty().bind(model.latitudeProperty());
+		logintudLabel.textProperty().bind(model.longitudProperty());
+		callingCodeLabel.textProperty().bind(model.location_calling_codeProperty());
+		zipLabel.textProperty().bind(model.zipProperty());
+		paisLabel.textProperty().bind(model.ip_locationProperty());
+		paisView.imageProperty().bind(model.iconProperty());
+		cityLabel.textProperty().bind(model.cityProperty());
+		languageLabel.textProperty().bind(model.lenguageProperty());
+		timeZoneLabel.textProperty().bind(model.time_zone_codeProperty());
+		currencyLabel.textProperty().bind(model.monedaProperty());
 
 	}
 

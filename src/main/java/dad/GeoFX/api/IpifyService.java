@@ -33,8 +33,8 @@ public class IpifyService {
 
 	}
 
-	public String getIp(String format) throws IOException {
-		Call<Myip> call = service.getIp(format);
+	public String getIp() throws IOException {
+		Call<Myip> call = service.getIp("json");
 
 		Response<Myip> response = call.execute();
 

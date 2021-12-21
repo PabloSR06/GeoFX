@@ -53,23 +53,27 @@ public class TopController implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		checkButton.arm();
 
 	}
 
 	void primeraIP() throws IOException {
 		IpifyService service = new IpifyService();
 
-		ip.set(service.getIp("json"));
+		ip.set(service.getIp());
+	}
+	
+	public void cargarDatos() throws IOException {
+		IpapiService ser = new IpapiService();
+
+		mainInfo.setMainInfo(ser.getInfo(ip.get()));
+		System.out.println("Pulsado");
+
 	}
 
 	@FXML
 	void onCheckAction(ActionEvent event) throws IOException {
 
-		IpapiService ser = new IpapiService();
-
-		mainInfo.setMainInfo(ser.getInfo(ip.get()));
-		System.out.println("ss");
+		cargarDatos();
 		
 	}
 

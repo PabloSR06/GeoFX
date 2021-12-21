@@ -64,11 +64,11 @@ public class ConnectionTabController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		
-		ipLabel.textProperty().bindBidirectional(model.ip_addressProperty());
-		ispLabel.textProperty().bindBidirectional(model.connection_ispProperty());
-		typeLabel.textProperty().bindBidirectional(model.typeProperty());
-		asnLabel.textProperty().bindBidirectional(model.connection_asnProperty());
-		hostLabel.textProperty().bindBidirectional(model.hostnameProperty());
+		ipLabel.textProperty().bind(model.ip_addressProperty());
+		ispLabel.textProperty().bind(model.connection_ispProperty());
+		typeLabel.textProperty().bind(model.typeProperty());
+		asnLabel.textProperty().bind(model.connection_asnProperty());
+		hostLabel.textProperty().bind(model.hostnameProperty());
 	
 	}
 	

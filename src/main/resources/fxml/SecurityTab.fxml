@@ -27,46 +27,46 @@
             <RowConstraints vgrow="NEVER" />
         </rowConstraints>
          <children>
-            <VBox spacing="5.0" GridPane.rowIndex="1">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="1">
                <children>
                   <Label text="PROXY DETECTED?">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="proxyCheck" mnemonicParsing="false" />
+                  <CheckBox fx:id="proxyCheck" disable="true" mnemonicParsing="false" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Label text="TOR DETECTED?">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="torCheck" mnemonicParsing="false" />
+                  <CheckBox fx:id="torCheck" disable="true" mnemonicParsing="false" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.rowIndex="2">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="2">
                <children>
                   <Label text="CRAWLER DETECTED?">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="crawlerCheck" mnemonicParsing="false" />
+                  <CheckBox fx:id="crawlerCheck" disable="true" mnemonicParsing="false" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <Label text="THREAT LEVEL">
                      <font>
@@ -79,7 +79,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <VBox spacing="5.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+            <VBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
                <children>
                   <Label text="POTENTIAL THREAT TYPES">
                      <font>
@@ -92,7 +92,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
-            <HBox spacing="5.0" GridPane.columnSpan="2">
+            <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="2">
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
