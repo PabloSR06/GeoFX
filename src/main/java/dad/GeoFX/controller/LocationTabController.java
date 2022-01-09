@@ -87,8 +87,8 @@ public class LocationTabController implements Initializable {
 	public void setInfo(GeoInfo info) {
 
 		if (info != null) {
-			model.latitudeProperty().set(info.getLatitude().toString());
-			model.longitudProperty().set(info.getLongitude().toString());
+			model.latitudeProperty().set(info.getLatitude()+ "");
+			model.longitudProperty().set(info.getLongitude()+ "");
 			model.time_zone_codeProperty().set(info.getTimeZone().getCode());
 			model.ip_locationProperty().set(info.getCountryName() + "(" +info.getCountryCode()+")");
 			model.iconProperty().set(new Image(getClass().getResource("/flag-icons/96x64/" + info.getCountryCode() +  ".png").toExternalForm()));
